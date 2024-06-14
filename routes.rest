@@ -1,0 +1,13 @@
+// LOCALHOST
+### GET all users
+GET http://localhost:3000/users
+
+### GET user by ID
+GET http://localhost:3000/users/666ba9eed8a532df025d91ec
+
+//  PRODUCTION
+### GET all users
+GET https://cse341-project01-gj74.onrender.com/users
+
+### GET user by ID
+GET https://cse341-project01-gj74.onrender.com/users/666ba9eed8a532df025d91ec
