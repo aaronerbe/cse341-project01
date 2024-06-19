@@ -3,11 +3,69 @@
 GET http://localhost:3000/users
 
 ### GET user by ID
-GET http://localhost:3000/users/666ba9eed8a532df025d91ec
+GET http://localhost:3000/users/650c5812c06bc031e32200a1
 
+### CREATE New user
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "A-Aron",
+    "lastName": "Test LastName",
+    "email": "a-aron@test.com",
+    "favoriteColor": "Blue",
+    "birthday": "01/01/2001"
+}
+
+### UPDATE Existing User
+PUT http://localhost:3000/users/667304c145e0e1d7a7d2aa44 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Aaron",
+    "lastName": "LName",
+    "email": "aLName@test.com",
+    "favoriteColor": "Purple",
+    "birthday": "01/01/2001"
+}
+
+### DELETE Existing User
+DELETE http://localhost:3000/users/667304c145e0e1d7a7d2aa44 HTTP/1.1
+
+
+
+///////////////////////////////////////////////
 //  PRODUCTION
 ### GET all users
 GET https://cse341-project01-gj74.onrender.com/users
 
 ### GET user by ID
-GET https://cse341-project01-gj74.onrender.com/users/666ba9eed8a532df025d91ec
+GET https://cse341-project01-gj74.onrender.com/users/650c5812c06bc031e32200a1
+
+
+### CREATE New user
+POST https://cse341-project01-gj74.onrender.com/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "A-Aron",
+    "lastName": "Test LastName",
+    "email": "a-aron@test.com",
+    "favoriteColor": "Blue",
+    "birthday": "01/01/2001"
+}
+
+### UPDATE Existing User
+PUT https://cse341-project01-gj74.onrender.com/users/6672fd1f947936e4ee2798a1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Aaron",
+    "lastName": "LName",
+    "email": "aLName@test.com",
+    "favoriteColor": "Purple",
+    "birthday": "01/01/2001"
+}
+
+### DELETE Existing User
+DELETE https://cse341-project01-gj74.onrender.com/users/6672fd1f947936e4ee2798a1 HTTP/1.1
