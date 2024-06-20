@@ -1,10 +1,15 @@
 const express = require('express');
 const mongodb = require('./db/database')
 const bodyParser = require('body-parser')
+//Swagger Implementation
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 const app = express();  //launch instance of express
 
-const port = process.env.PORT || 3000; //process.env.PORT allows servers to use it, e.g. Asure, etc
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+const port = process.env.PORT || 3000; //process.env.PORT allows servers to use it, e.g. Azure, etc
 
 app.use(bodyParser.json())
 app.use('/', require('./routes'));
