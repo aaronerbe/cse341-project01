@@ -1,6 +1,6 @@
 const router = require('express').Router(); //express method to handle routes
 
-router.use('/', require('./swagger'));
+//router.use('/', require('./swagger'));
 
 router.get('/', (req, res) => {
   //#swagger.tags=['Hello World']
