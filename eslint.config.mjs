@@ -1,17 +1,19 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-
+import prettier from "eslint-config-prettier";
 
 export default [
-  {files: ["**/*.js"], languageOptions: {sourceType: "commonjs"}},
-  {languageOptions: { globals: globals.browser }},
-  pluginJs.configs.recommended,
   {
-    extends: ["prettier"],
-    plugins: ["prettier:recommended", "eslint:recommended"],
+    files: ["**/*.js"],
+    languageOptions: {
+      sourceType: "commonjs",
+      globals: globals.browser,
+    },
     rules: {
-        "no-unused-vars": "warn",
-        "no-undef": "warn"
-    }
-  }
+      ...pluginJs.configs.recommended.rules,
+      ...prettier.rules,
+      "no-unused-vars": "warn",
+      "no-undef": "warn",
+    },
+  },
 ];

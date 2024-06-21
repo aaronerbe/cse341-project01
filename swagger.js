@@ -1,11 +1,14 @@
 const swaggerAutogen = require('swagger-autogen')();
-	
+
 const doc = {
   info: {
     title: 'My API',
     description: 'Description'
   },
-  host: 'localhost:3000'    /* change this to match path/port */
+//  host: 'localhost:3000' /* change this to match path/port */
+  host: process.env.SWAGGER_HOST || 'localhost:3000', // Use environment variable or default to localhost
+  schemes: process.env.SWAGGER_SCHEME ? [process.env.SWAGGER_SCHEME] : ['http'], // Use HTTPS if specified
+
 };
 
 const outputFile = './swagger.json';
