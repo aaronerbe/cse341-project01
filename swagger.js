@@ -5,10 +5,9 @@ const doc = {
     title: 'My API',
     description: 'Description'
   },
-//  host: 'localhost:3000' /* change this to match path/port */
-  host: process.env.SWAGGER_HOST || 'localhost:3000', // Use environment variable or default to localhost
-  schemes: process.env.SWAGGER_SCHEME ? [process.env.SWAGGER_SCHEME] : ['http'], // Use HTTPS if specified
-
+  host: 'cse341-project01-gj74.onrender.com', /* change this to match path/port */
+  schemes: ['https']
+  
 };
 
 const outputFile = './swagger.json';
